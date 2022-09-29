@@ -203,6 +203,41 @@ public class BasicCalculatorDivideTest {
         Assert.assertEquals(actualResult, expectedResult);
 
     }
+    @Test
+    public void testAnyNumberDividedBy0GivesAnErrorMessage () {
+
+        String expectedResult = "Divide by zero error!";
+
+
+        WebElement firstNumbField = driver.findElement(By.id("number1Field"));
+
+        firstNumbField.sendKeys("10");
+
+        WebElement secondNumbField = driver.findElement(By.id("number2Field"));
+        secondNumbField.sendKeys("0");
+
+        WebElement selectOperation = driver.findElement((By.id("selectOperationDropdown")));
+        selectOperation.click();
+
+        Select select = new Select(selectOperation);
+        select.selectByVisibleText("Divide");
+
+
+        WebElement calculateBtn = driver.findElement(By.id("calculateButton"));
+        calculateBtn.click();
+
+//        WebElement result = driver.findElement(By.id("numberAnswerField"));
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        //    double actualResult = Double.parseDouble(decimalFormat.format((result.getAttribute("value"))));
+//        double preActualResult = Double.parseDouble((result.getAttribute("value")));
+//        double actualResult = Double.parseDouble(decimalFormat.format(preActualResult));
+        WebElement result = driver.findElement(By.id("errorMsgField"));
+        String actualResult = result.getText();
+
+        Assert.assertEquals(actualResult, expectedResult);
+
+    }
+
 
 
 
