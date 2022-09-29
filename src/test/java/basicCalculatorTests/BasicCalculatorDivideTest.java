@@ -226,11 +226,6 @@ public class BasicCalculatorDivideTest {
         WebElement calculateBtn = driver.findElement(By.id("calculateButton"));
         calculateBtn.click();
 
-//        WebElement result = driver.findElement(By.id("numberAnswerField"));
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        //    double actualResult = Double.parseDouble(decimalFormat.format((result.getAttribute("value"))));
-//        double preActualResult = Double.parseDouble((result.getAttribute("value")));
-//        double actualResult = Double.parseDouble(decimalFormat.format(preActualResult));
         WebElement result = driver.findElement(By.id("errorMsgField"));
         String actualResult = result.getText();
 
