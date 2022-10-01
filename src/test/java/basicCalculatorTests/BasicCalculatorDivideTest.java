@@ -204,7 +204,7 @@ public class BasicCalculatorDivideTest {
 
     }
     @Test
-    public void testAnyNumberDividedBy0GivesAnErrorMessage () {
+    public void testAnyNumberDividedBy0GivesAnErrorMessage() {
 
         String expectedResult = "Divide by zero error!";
 
@@ -232,6 +232,9 @@ public class BasicCalculatorDivideTest {
         Assert.assertEquals(actualResult, expectedResult);
 
     }
+
+
+
 
 
 
